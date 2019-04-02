@@ -1,0 +1,208 @@
+{
+	"edges": [
+		{
+			"source": "ads1",
+			"target": "ads",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "TestbedVM"
+         	}
+		},
+		{
+			"source": "ads2",
+			"target": "ads",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "TestbedVM"
+         	}
+		},
+		{
+			"source": "surrey1",
+			"target": "surrey",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "TestbedVM"
+         	}		},
+		{
+			"source": "surrey2",
+			"target": "surrey",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "TestbedVM"
+         	}
+		},
+		{
+			"source": "ads1",
+			"target": "ads2",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}			
+		},
+		{
+			"source": "ads1",
+			"target": "surrey1",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "surrey1",
+			"target": "surrey2",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "ads2",
+			"target": "surrey1",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "term1",
+			"target": "ads2",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "term2",
+			"target": "surrey2",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "vnf1",
+			"target": "ads1",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		},
+		{
+			"source": "vnf2",
+			"target": "surrey1",
+			"info": {
+           		"property": {},
+           		"group": "",
+           		"view": "OverlayTopology"
+         	}
+		}
+	],
+	"vertices": [
+		{
+			"info": {
+				"group": [],
+				"type": "Testbed"
+			},
+			"id": "ads"
+		},
+		{
+			"info": {
+				"group": [],
+				"type": "Testbed"
+			},
+			"id": "surrey"
+		},
+		{
+			"info": {
+				"group": [],
+				"interfaces": {
+					"lifecycle": {
+						"START": "ads1_setup.sh"
+					}
+				},
+				"type": "VM"
+			},
+			"id": "ads1"
+		},
+		{
+			"info": {
+				"group": [],
+				"interfaces": {
+					"lifecycle": {
+						"START": "ads2_setup.sh"
+					}
+				},
+				"type": "VM"
+			},
+			"id": "ads2"
+		},
+		{
+			"info": {
+				"group": [],
+				"interfaces": {
+					"lifecycle": {
+						"START": "surrey1_setup.sh"
+					}
+				},
+				"type": "VM"
+			},
+			"id": "surrey1"
+		},
+		{
+			"info": {
+				"group": [],
+				"interfaces": {
+					"lifecycle": {
+						"START": "surrey2_setup.sh"
+					}
+				},
+				"type": "VM"
+			},
+			"id": "surrey2"
+		},
+		{
+			"info": {
+				"group": [],
+				"type": "term_netns"
+			},
+			"id": "term1"
+		},
+		{
+			"info": {
+				"group": [],
+				"type": "term_netns"
+			},
+			"id": "term2"
+		},
+		{
+			"info": {
+				"group": [],
+				"type": "ovnf_lxdcont"
+			},
+			"id": "vnf1"
+		},
+		{
+			"info": {
+				"group": [],
+				"type": "ovnf_lxdcont"
+			},
+			"id": "vnf2"
+		}
+	],
+	"graph_parameters": {
+		"generated": false,
+		"tunneling": "VXLAN",
+		"testbed": "SOFTFIRE"
+	}
+}

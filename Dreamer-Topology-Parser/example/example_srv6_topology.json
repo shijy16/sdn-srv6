@@ -1,0 +1,69 @@
+{
+   "edges":[
+      {
+         "source":"ads1",
+         "target":"ads2",
+         "view": "Data",
+         "info": {
+           "property": {
+              "bw": 1,
+              "delay": 1000
+           },
+           "group": ""
+         }
+      },
+      {
+         "source":"ads1",
+         "target":"sur1",
+         "view": "Data",
+         "info": {
+           "property": {
+              "bw": 5,
+              "delay": 200
+           },
+           "group": ""
+         }
+      },
+      {
+         "source":"ads2",
+         "target":"sur1",
+         "view": "Data",
+         "info": {
+           "property": {
+              "bw": 10,
+              "delay": 100
+           },
+           "group": ""
+         }
+      }
+   ],
+   "vertices":[
+     {
+      "info": {
+        "type": "Router",
+        "property": {},
+        "group": [200]
+      },
+      "id": "ads1"
+     },
+     {
+      "info": {
+        "type": "Router",
+        "property": {},
+        "group": [200]
+      },
+      "id": "ads2"
+     },
+     {
+      "info": {
+        "type": "Router",
+        "property": {},
+        "group": [200]
+      },
+      "id": "sur1"
+     }
+   ],
+   "graph_parameters":{
+        "testbed":"MININET"
+   }
+}
