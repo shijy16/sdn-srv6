@@ -21,12 +21,12 @@ grpc_server = None
 # Netlink socket
 ip_route = None
 # Cache of the resolved interfaces
-interfaces = ['ads1-eth0']
+interfaces = ['ads1-eth0','ads1-eth1','ads1-eth2']
 idxs = {}
 # logger reference
 logger = logging.getLogger(__name__)
 # Server ip and port
-GRPC_IP = 'localhost'
+GRPC_IP = '::'
 GRPC_PORT = 8080
 # Debug option
 SERVER_DEBUG = False
@@ -49,7 +49,7 @@ class SRv6ExplicitPathHandler(srv6_explicit_path_pb2_grpc.SRv6ExplicitPathServic
       segments = []
       for srv6_segment in path.sr_path:
         segments.append(srv6_segment.segment)
-      ip_route.route(op, dst=path.destination, oif=idxs[path.device],
+      ip_route.route(op, dst=path.destination, oif=idxs['ads1-' + path.device],
         encap={'type':'seg6', 'mode':path.encapmode, 'segs':segments})
     # and create the response
     return srv6_explicit_path_pb2.SRv6EPReply(message="OK")
@@ -88,15 +88,17 @@ def start_server():
       grpc_server.add_secure_port("[%s]:%s" %(GRPC_IP, GRPC_PORT), grpc_server_credentials)
     else:
       # Create an insecure endpoint
-      grpc_server.add_insecure_port("%s:%s" %(GRPC_IP, GRPC_PORT))
+      grpc_server.add_insecure_port("[%s]:%s" %(GRPC_IP, GRPC_PORT))
   # Setup ip route
   if ip_route is not None:
     logger.error("IP Route is already setup")
   else:
     ip_route = IPRoute()
   # Resolve the interfaces
-#   for interface in interfaces:
-    # idxs[interface] = ip_route.link_lookup(ifname=interface)[0]
+  for interface in interfaces:
+    idxs[interface] = ip_route.link_lookup(ifname=interface)[0]
+    print(idxs[interface])
+
   # Start the loop for gRPC
   logger.info("Listening gRPC")
   print('start server  at %s:%s'%(GRPC_IP,GRPC_PORT))

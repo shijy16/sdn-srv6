@@ -26,7 +26,8 @@ def get_grpc_session(ip_address, port, secure):
   return srv6_explicit_path_pb2_grpc.SRv6ExplicitPathStub(channel), channel
 
 # Get the reference of the stub
-srv6_stub,channel = get_grpc_session("localhost", 12345, SECURE)
+srv6_stub,channel = get_grpc_session("localhost", 8080, SECURE)
+print("channel started")
 # Create message request
 path_request = srv6_explicit_path_pb2.SRv6EPRequest()
 # Create a new path
