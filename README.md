@@ -69,8 +69,9 @@ PS:Now the code is only ready for the connection between mgmt and ads1.You may n
 
 +  run through and add function `add_srv6_route(src,segs,dst,encapmode)`
 
-+ **TODO**
-  + add auto startup funcs for each devices
-  + add delete function(need to learn `grpc` programming I guess)
-  +  to see if it's possible to build grpc links between mgmt and all routers through  real time topology
++  **TODO**
+  + [ ]  add auto startup funcs for each devices
+    + [ ] still some bugs
+  + [ ] add delete function(need to learn `grpc` programming I guess)
+  + [ ] to see if it's possible to build grpc links between mgmt and all routers through  real time topology
 

@@ -171,7 +171,7 @@ class SRv6Topo(Topo):
             self.nodeInfo(lhs)['nets'].append(lhsnet)
             self.nodeInfo(rhs)['nets'].append(rhsnet)
 
-        
+
 # Utility function to dump relevant information of the emulation
 def dump():
   # Json dump of the topology
@@ -216,6 +216,14 @@ def stopAll():
     # Restart root ssh daemon
     os.system('service sshd restart')
 
+def runServers(net):
+    i = 0
+    for host in net.topo.routers:
+        commandLine = "python grpc/grpc_server.py "+ str(i) + " "+ host + " &"
+        net.get(host).cmd(commandLine)
+        print(commandLine)
+        i += 1
+
 # Utility function to deploy Mininet topology
 def deploy( options ):
     # Retrieves options
@@ -240,6 +248,7 @@ def deploy( options ):
     net.build()
     # Start topology
     net.start()
+    runServers(net)
     # dump information
     dump()
     # Show Mininet prompt

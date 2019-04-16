@@ -9,6 +9,7 @@ from google.protobuf import json_format
 import logging
 import time
 import json
+import sys
 import grpc
 
 import srv6_explicit_path_pb2_grpc
@@ -21,13 +22,13 @@ grpc_server = None
 # Netlink socket
 ip_route = None
 # Cache of the resolved interfaces
-interfaces = ['ads1-eth0','ads1-eth1','ads1-eth2']
+interfaces = ['-eth0','-eth1','-eth2']
 idxs = {}
 # logger reference
 logger = logging.getLogger(__name__)
 # Server ip and port
 GRPC_IP = '::'
-GRPC_PORT = 8080
+GRPC_PORT = 8000
 # Debug option
 SERVER_DEBUG = False
 # Secure option
@@ -128,5 +129,10 @@ def parse_options():
   logger.info("SERVER_DEBUG:" + str(SERVER_DEBUG))
 
 if __name__ == "__main__":
+  if len(sys.argv) > 2:
+    GRPC_PORT += int(sys.argv[1])
+    for i in range(0,len(interfaces)):
+      interfaces[i] = sys.argv[2] + interfaces[i]
+  
   parse_options()
   start_server()

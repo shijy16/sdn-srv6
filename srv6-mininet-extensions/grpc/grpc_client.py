@@ -37,9 +37,16 @@ def add_srv6_route(src,segs,dst,encapmode):
     for seg in segs:
         srv6_segment = path.sr_path.add()
         srv6_segment.segment = seg
+    # try:
     response = stubs[src].Create(path_request)
     print(response)
-stubs['2000::1'],channel = get_grpc_session("[2000::1]", 8080, SECURE)
+    print("\t"+src+"->"+dst)
+    # except:
+    #   print("error:"+src+"->"+dst)
+# stubs['2000::1'],channel = get_grpc_session("[2000::1]", 8000, SECURE)
+stubs['2000::2'],channel = get_grpc_session("[2000::2]", 8001, SECURE)
 print("channel started")
-add_srv6_route('2000::1',['2000::3'],'2000::2/128','inline')
+# add_srv6_route('2000::1',['2000::3'],'2000::2/128','inline')
+# add_srv6_route('2000::1',['2000::2'],'2000::3/128','inline')
+add_srv6_route('2000::2',['2000::3'],'2000::1/128','inline')
 
