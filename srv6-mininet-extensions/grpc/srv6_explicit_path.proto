@@ -8,29 +8,22 @@ service SRv6ExplicitPath {
   rpc Create (SRv6EPRequest) returns (SRv6EPReply) {}
   // Remove operation
   rpc Remove (SRv6EPRequest) returns (SRv6EPReply) {}
+  rpc Replace (SRv6EPRequest) returns (SRv6EPReply) {}
 }
 
 // The SRv6EPRequest message containing a number of paths.
 message SRv6EPRequest {
-  repeated Path path = 1;
-  string src = 2;
-}
-
-// The Path message encodes a path request
-message Path {
-  // Route of the SRv6 policy
-  string destination = 1;
-  // SRv6 Segment
+  string src = 1;
+  string dst = 2;
   message SRv6Segment {
     string segment = 1;
   }
-  // A collection of SRv6 Segments
-  repeated SRv6Segment sr_path = 2;
-  // Encap mode
-  string encapmode = 3;
-  // Device name
-  string device = 4;
+  repeated SRv6Segment sr_path = 3;
+  string encapmode = 4;
+  string device = 5;
 }
+
+
 
 // The SRv6EPReply message containing a simple status message
 message SRv6EPReply {

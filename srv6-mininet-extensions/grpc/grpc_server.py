@@ -46,13 +46,11 @@ class SRv6ExplicitPathHandler(srv6_explicit_path_pb2_grpc.SRv6ExplicitPathServic
     print("config received:\n%s",request)
     logger.debug("config received:\n%s", request)
     # Let's push the routes
-    for path in request.path:
-      # Rebuild segments
-      segments = []
-      for srv6_segment in path.sr_path:
-        segments.append(srv6_segment.segment)
-      ip_route.route(op, dst=path.destination, oif=idxs[myName + '-' + path.device],
-        encap={'type':'seg6', 'mode':path.encapmode, 'segs':segments})
+    segments = []
+    for srv6_segment in request.sr_path:
+      segments.append(srv6_segment.segment)
+    ip_route.route(op, dst=request.dst, oif=idxs[myName + '-' + request.device],
+      encap={'type':'seg6', 'mode':request.encapmode, 'segs':segments})
     # and create the response
     return srv6_explicit_path_pb2.SRv6EPReply(message="OK")
 
@@ -60,6 +58,8 @@ class SRv6ExplicitPathHandler(srv6_explicit_path_pb2_grpc.SRv6ExplicitPathServic
     # Handle Create operation 
     return self.Execute("add", request, context)
 
+  def Replace(self, request, context):
+    return self.Execute("replace", request, context)
 
   def Remove(self, request, context):
     # Handle Remove operation 

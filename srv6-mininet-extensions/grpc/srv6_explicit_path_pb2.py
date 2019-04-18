@@ -19,11 +19,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='srv6_explicit_path',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x18srv6_explicit_path.proto\x12\x12srv6_explicit_path\"D\n\rSRv6EPRequest\x12&\n\x04path\x18\x01 \x03(\x0b\x32\x18.srv6_explicit_path.Path\x12\x0b\n\x03src\x18\x02 \x01(\t\"\x95\x01\n\x04Path\x12\x13\n\x0b\x64\x65stination\x18\x01 \x01(\t\x12\x35\n\x07sr_path\x18\x02 \x03(\x0b\x32$.srv6_explicit_path.Path.SRv6Segment\x12\x11\n\tencapmode\x18\x03 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x04 \x01(\t\x1a\x1e\n\x0bSRv6Segment\x12\x0f\n\x07segment\x18\x01 \x01(\t\"\x1e\n\x0bSRv6EPReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\xb2\x01\n\x10SRv6ExplicitPath\x12N\n\x06\x43reate\x12!.srv6_explicit_path.SRv6EPRequest\x1a\x1f.srv6_explicit_path.SRv6EPReply\"\x00\x12N\n\x06Remove\x12!.srv6_explicit_path.SRv6EPRequest\x1a\x1f.srv6_explicit_path.SRv6EPReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x18srv6_explicit_path.proto\x12\x12srv6_explicit_path\"\xac\x01\n\rSRv6EPRequest\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x0b\n\x03\x64st\x18\x02 \x01(\t\x12>\n\x07sr_path\x18\x03 \x03(\x0b\x32-.srv6_explicit_path.SRv6EPRequest.SRv6Segment\x12\x11\n\tencapmode\x18\x04 \x01(\t\x12\x0e\n\x06\x64\x65vice\x18\x05 \x01(\t\x1a\x1e\n\x0bSRv6Segment\x12\x0f\n\x07segment\x18\x01 \x01(\t\"\x1e\n\x0bSRv6EPReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\x83\x02\n\x10SRv6ExplicitPath\x12N\n\x06\x43reate\x12!.srv6_explicit_path.SRv6EPRequest\x1a\x1f.srv6_explicit_path.SRv6EPReply\"\x00\x12N\n\x06Remove\x12!.srv6_explicit_path.SRv6EPRequest\x1a\x1f.srv6_explicit_path.SRv6EPReply\"\x00\x12O\n\x07Replace\x12!.srv6_explicit_path.SRv6EPRequest\x1a\x1f.srv6_explicit_path.SRv6EPReply\"\x00\x62\x06proto3')
 )
 
 
 
+
+_SRV6EPREQUEST_SRV6SEGMENT = _descriptor.Descriptor(
+  name='SRv6Segment',
+  full_name='srv6_explicit_path.SRv6EPRequest.SRv6Segment',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='segment', full_name='srv6_explicit_path.SRv6EPRequest.SRv6Segment.segment', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=191,
+  serialized_end=221,
+)
 
 _SRV6EPREQUEST = _descriptor.Descriptor(
   name='SRv6EPRequest',
@@ -33,97 +63,36 @@ _SRV6EPREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='path', full_name='srv6_explicit_path.SRv6EPRequest.path', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='src', full_name='srv6_explicit_path.SRv6EPRequest.src', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='src', full_name='srv6_explicit_path.SRv6EPRequest.src', index=1,
+      name='dst', full_name='srv6_explicit_path.SRv6EPRequest.dst', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=48,
-  serialized_end=116,
-)
-
-
-_PATH_SRV6SEGMENT = _descriptor.Descriptor(
-  name='SRv6Segment',
-  full_name='srv6_explicit_path.Path.SRv6Segment',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='segment', full_name='srv6_explicit_path.Path.SRv6Segment.segment', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=238,
-  serialized_end=268,
-)
-
-_PATH = _descriptor.Descriptor(
-  name='Path',
-  full_name='srv6_explicit_path.Path',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='destination', full_name='srv6_explicit_path.Path.destination', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sr_path', full_name='srv6_explicit_path.Path.sr_path', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='sr_path', full_name='srv6_explicit_path.SRv6EPRequest.sr_path', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='encapmode', full_name='srv6_explicit_path.Path.encapmode', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='encapmode', full_name='srv6_explicit_path.SRv6EPRequest.encapmode', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='device', full_name='srv6_explicit_path.Path.device', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='device', full_name='srv6_explicit_path.SRv6EPRequest.device', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -131,7 +100,7 @@ _PATH = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_PATH_SRV6SEGMENT, ],
+  nested_types=[_SRV6EPREQUEST_SRV6SEGMENT, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -140,8 +109,8 @@ _PATH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=268,
+  serialized_start=49,
+  serialized_end=221,
 )
 
 
@@ -171,39 +140,30 @@ _SRV6EPREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=300,
+  serialized_start=223,
+  serialized_end=253,
 )
 
-_SRV6EPREQUEST.fields_by_name['path'].message_type = _PATH
-_PATH_SRV6SEGMENT.containing_type = _PATH
-_PATH.fields_by_name['sr_path'].message_type = _PATH_SRV6SEGMENT
+_SRV6EPREQUEST_SRV6SEGMENT.containing_type = _SRV6EPREQUEST
+_SRV6EPREQUEST.fields_by_name['sr_path'].message_type = _SRV6EPREQUEST_SRV6SEGMENT
 DESCRIPTOR.message_types_by_name['SRv6EPRequest'] = _SRV6EPREQUEST
-DESCRIPTOR.message_types_by_name['Path'] = _PATH
 DESCRIPTOR.message_types_by_name['SRv6EPReply'] = _SRV6EPREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SRv6EPRequest = _reflection.GeneratedProtocolMessageType('SRv6EPRequest', (_message.Message,), dict(
+
+  SRv6Segment = _reflection.GeneratedProtocolMessageType('SRv6Segment', (_message.Message,), dict(
+    DESCRIPTOR = _SRV6EPREQUEST_SRV6SEGMENT,
+    __module__ = 'srv6_explicit_path_pb2'
+    # @@protoc_insertion_point(class_scope:srv6_explicit_path.SRv6EPRequest.SRv6Segment)
+    ))
+  ,
   DESCRIPTOR = _SRV6EPREQUEST,
   __module__ = 'srv6_explicit_path_pb2'
   # @@protoc_insertion_point(class_scope:srv6_explicit_path.SRv6EPRequest)
   ))
 _sym_db.RegisterMessage(SRv6EPRequest)
-
-Path = _reflection.GeneratedProtocolMessageType('Path', (_message.Message,), dict(
-
-  SRv6Segment = _reflection.GeneratedProtocolMessageType('SRv6Segment', (_message.Message,), dict(
-    DESCRIPTOR = _PATH_SRV6SEGMENT,
-    __module__ = 'srv6_explicit_path_pb2'
-    # @@protoc_insertion_point(class_scope:srv6_explicit_path.Path.SRv6Segment)
-    ))
-  ,
-  DESCRIPTOR = _PATH,
-  __module__ = 'srv6_explicit_path_pb2'
-  # @@protoc_insertion_point(class_scope:srv6_explicit_path.Path)
-  ))
-_sym_db.RegisterMessage(Path)
-_sym_db.RegisterMessage(Path.SRv6Segment)
+_sym_db.RegisterMessage(SRv6EPRequest.SRv6Segment)
 
 SRv6EPReply = _reflection.GeneratedProtocolMessageType('SRv6EPReply', (_message.Message,), dict(
   DESCRIPTOR = _SRV6EPREPLY,
@@ -220,8 +180,8 @@ _SRV6EXPLICITPATH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=303,
-  serialized_end=481,
+  serialized_start=256,
+  serialized_end=515,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -236,6 +196,15 @@ _SRV6EXPLICITPATH = _descriptor.ServiceDescriptor(
     name='Remove',
     full_name='srv6_explicit_path.SRv6ExplicitPath.Remove',
     index=1,
+    containing_service=None,
+    input_type=_SRV6EPREQUEST,
+    output_type=_SRV6EPREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Replace',
+    full_name='srv6_explicit_path.SRv6ExplicitPath.Replace',
+    index=2,
     containing_service=None,
     input_type=_SRV6EPREQUEST,
     output_type=_SRV6EPREPLY,

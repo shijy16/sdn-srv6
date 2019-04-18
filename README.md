@@ -107,6 +107,10 @@ then you can get topo infos in folder `topo_extraction`
 + finish easy path delete and path add functions
 + test topo extractions
 + **TODO**
-  + [ ] build a structure to controll all srv6 paths
+  + [x] build a structure to controll all srv6 paths
 
 basic functions finished
+
+**BUG**
+
++ the same srv6 route can't be add and delete without space

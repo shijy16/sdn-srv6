@@ -24,6 +24,11 @@ class SRv6ExplicitPathStub(object):
         request_serializer=srv6__explicit__path__pb2.SRv6EPRequest.SerializeToString,
         response_deserializer=srv6__explicit__path__pb2.SRv6EPReply.FromString,
         )
+    self.Replace = channel.unary_unary(
+        '/srv6_explicit_path.SRv6ExplicitPath/Replace',
+        request_serializer=srv6__explicit__path__pb2.SRv6EPRequest.SerializeToString,
+        response_deserializer=srv6__explicit__path__pb2.SRv6EPReply.FromString,
+        )
 
 
 class SRv6ExplicitPathServicer(object):
@@ -44,6 +49,13 @@ class SRv6ExplicitPathServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Replace(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_SRv6ExplicitPathServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -54,6 +66,11 @@ def add_SRv6ExplicitPathServicer_to_server(servicer, server):
       ),
       'Remove': grpc.unary_unary_rpc_method_handler(
           servicer.Remove,
+          request_deserializer=srv6__explicit__path__pb2.SRv6EPRequest.FromString,
+          response_serializer=srv6__explicit__path__pb2.SRv6EPReply.SerializeToString,
+      ),
+      'Replace': grpc.unary_unary_rpc_method_handler(
+          servicer.Replace,
           request_deserializer=srv6__explicit__path__pb2.SRv6EPRequest.FromString,
           response_serializer=srv6__explicit__path__pb2.SRv6EPReply.SerializeToString,
       ),
