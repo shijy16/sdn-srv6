@@ -72,6 +72,7 @@ python grpc/grpc_client.py
 ```
 
 run server on router's xterm
+note:Servers will be started as the net started.So there's no need to start them youself.
 
 ````shell
 python grpc/grpc_server.py
