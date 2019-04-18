@@ -120,10 +120,10 @@ class srv6_path_manager:
 
 
 manager = srv6_path_manager()
-manager.add_path('2000::1','fdff::2/128',['fdff::5'],'inline')
-manager.add_path('2000::1','fdff::3/128',['fdff::2'],'inline')
+manager.add_path('2000::1','fdf0:0:0:2::2/128',['fdf0:0:0:2::1'],'inline')
+manager.add_path('2000::1','fdf0:0:0:3::2/128',['fdff::2'],'inline')
 manager.add_path('2000::1','fdff::4/128',['fdff::2'],'inline')
 manager.add_path('2000::1','fdff::5/128',['fdff::2'],'inline')
 manager.add_path('2000::1','fdff::6/128',['fdff::2'],'inline')
 manager.add_path('2000::1','fdff::7/128',['fdff::2'],'inline')
-manager.clear_all()
+# manager.clear_all()
