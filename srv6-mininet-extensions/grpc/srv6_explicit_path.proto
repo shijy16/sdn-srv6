@@ -13,6 +13,7 @@ service SRv6ExplicitPath {
 // The SRv6EPRequest message containing a number of paths.
 message SRv6EPRequest {
   repeated Path path = 1;
+  string src = 2;
 }
 
 // The Path message encodes a path request

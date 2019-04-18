@@ -1,9 +1,0 @@
-.DS_Store
-.idea/
-*.txt
-*.pyc
-*.dot
-*.svg
-*.json
-*.pem
-*pb2*

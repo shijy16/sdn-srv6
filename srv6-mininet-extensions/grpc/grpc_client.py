@@ -2,6 +2,7 @@
 
 import grpc
 import json
+import os
 
 import srv6_explicit_path_pb2_grpc
 import srv6_explicit_path_pb2
@@ -26,27 +27,53 @@ def get_grpc_session(ip_address, port, secure):
   return srv6_explicit_path_pb2_grpc.SRv6ExplicitPathStub(channel), channel
 
 
-def add_srv6_route(src,segs,dst,encapmode):
+def add_srv6_route(request):
+    try_remove_srv6_route(request)
     global stubs
-
-    path_request = srv6_explicit_path_pb2.SRv6EPRequest()
-    path = path_request.path.add()
-    path.destination = dst
-    path.device = 'eth1'
-    path.encapmode = encapmode
-    for seg in segs:
-        srv6_segment = path.sr_path.add()
-        srv6_segment.segment = seg
     # try:
-    response = stubs[src].Create(path_request)
-    print(response)
-    print("\t"+src+"->"+dst)
-    # except:
-    #   print("error:"+src+"->"+dst)
-# stubs['2000::1'],channel = get_grpc_session("[2000::1]", 8000, SECURE)
-stubs['2000::2'],channel = get_grpc_session("[2000::2]", 8001, SECURE)
-print("channel started")
-# add_srv6_route('2000::1',['2000::3'],'2000::2/128','inline')
-# add_srv6_route('2000::1',['2000::2'],'2000::3/128','inline')
-add_srv6_route('2000::2',['2000::3'],'2000::1/128','inline')
+    try:    
+        response = stubs[request.src].Create(request)
+        print("add srv6 route OK:")
+        # print("\t"+src+"->"+dst+"\t:"+str(segs))
+    except Exception,e:
+        print("add srv6 route ERROR:")
+        # print("\t"+src+"->"+dst+"\t:"+str(segs))
+        print(str(e))
 
+def create_path_request(src,dst,segs,encapmode):
+  path_request = srv6_explicit_path_pb2.SRv6EPRequest()
+  path = path_request.path.add()
+  path.destination = dst
+  path.device = 'eth1'
+  path.encapmode = encapmode
+  path_request.src = src
+  for seg in segs:
+    srv6_segment = path.sr_path.add()
+    srv6_segment.segment = seg
+  return path_request
+
+def try_remove_srv6_route(request):
+  global stubs
+  try:    
+    response = stubs[request.src].Remove(request)
+  except:
+    None
+
+def remove_srv6_route(request): 
+  global stubs
+  try:    
+    response = stubs[request.src].Remove(request)
+    print("remove srv6 route OK:")
+  except Exception,e:
+    print("remove srv6 route ERROR:")
+    # print("\t"+src+"->"+dst+"\t")
+    # print(e.message)
+    print(str(e))
+
+stubs['2000::1'],channel = get_grpc_session("[2000::1]", 8000, SECURE)
+stubs['2000::2'],channel = get_grpc_session("[2000::2]", 8000, SECURE)
+print("start:")
+request = create_path_request('2000::1','fdff::2/128',['fdff::3'],'inline')
+remove_srv6_route(request)
+request = create_path_request('2000::2','fdff::1/128',['fdff::3'],'inline')
+remove_srv6_route(request)

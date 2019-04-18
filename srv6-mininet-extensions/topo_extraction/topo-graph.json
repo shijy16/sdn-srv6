@@ -1,0 +1,69 @@
+{
+  "directed": false, 
+  "graph": {}, 
+  "links": [
+    {
+      "source": "fdff::3/128", 
+      "target": "0.0.0.3"
+    }, 
+    {
+      "source": "fdff::2/128", 
+      "target": "0.0.0.2"
+    }, 
+    {
+      "source": "fdff::1/128", 
+      "target": "0.0.0.1"
+    }, 
+    {
+      "label": "fdf0:0:0:1::/64", 
+      "source": "0.0.0.1", 
+      "target": "0.0.0.3"
+    }, 
+    {
+      "label": "fdf0::/64", 
+      "source": "0.0.0.1", 
+      "target": "0.0.0.2"
+    }, 
+    {
+      "label": "fdf0:0:0:2::/64", 
+      "source": "0.0.0.3", 
+      "target": "0.0.0.2"
+    }
+  ], 
+  "multigraph": false, 
+  "nodes": [
+    {
+      "fillcolor": "cyan", 
+      "id": "fdff::3/128", 
+      "shape": "box", 
+      "style": "filled"
+    }, 
+    {
+      "fillcolor": "cyan", 
+      "id": "fdff::2/128", 
+      "shape": "box", 
+      "style": "filled"
+    }, 
+    {
+      "fillcolor": "cyan", 
+      "id": "fdff::1/128", 
+      "shape": "box", 
+      "style": "filled"
+    }, 
+    {
+      "fillcolor": "red", 
+      "id": "0.0.0.1", 
+      "style": "filled"
+    }, 
+    {
+      "fillcolor": "red", 
+      "id": "0.0.0.3", 
+      "style": "filled"
+    }, 
+    {
+      "fillcolor": "red", 
+      "id": "0.0.0.2", 
+      "style": "filled"
+    }
+  ]
+}

@@ -7,6 +7,22 @@ attempt to use build a srv6 algorithm testbed in mininet.
 
 ## I. Startup
 
+### 0. Install dependencies
+
+This project depends on [Dreamer Topology Parser and Validator](https://github.com/netgroup/Dreamer-Topology-Parser)
+
+```
+> git clone https://github.com/netgroup/Dreamer-Topology-Parser
+> sudo python setup.py install
+```
+
+This project depends on [SRv6 Properties Generators](https://github.com/netgroup/srv6-properties-generators)
+
+```
+> git clone https://github.com/netgroup/srv6-properties-generators
+> sudo python setup.py install
+```
+
 ### 1. Get `srv6-mininet-extensions ` ready
 
 see srv6-mininet-extensions/README.md
@@ -61,7 +77,17 @@ run server on router's xterm
 python grpc/grpc_server.py
 ````
 
-PS:Now the code is only ready for the connection between mgmt and ads1.You may need to change `grpc/grpc_server.py` to connect with other devices
+### 4. Topology extraction
+
+on mgmt, run command:
+
+```` shell
+python topo_extract/ti_extraction.py --ip_ports IP-PORT --peroid PERIOD
+e.g:
+python topo_extract/ti_extraction.py --ip_ports 2000::1-2606 --peroid 1
+````
+
+then you can get topo infos in folder `topo_extraction`
 
 ## III. development date
 
@@ -70,8 +96,17 @@ PS:Now the code is only ready for the connection between mgmt and ads1.You may n
 +  run through and add function `add_srv6_route(src,segs,dst,encapmode)`
 
 +  **TODO**
-  + [ ]  add auto startup funcs for each devices
-    + [ ] still some bugs
-  + [ ] add delete function(need to learn `grpc` programming I guess)
+  + [x]  add auto startup funcs for each devices
+    + [x] still some bugs
+  + [x] add delete function(need to learn `grpc` programming I guess)
   + [ ] to see if it's possible to build grpc links between mgmt and all routers through  real time topology
 
+#### 18th April
+
++ add auto startup for servers
++ finish easy path delete and path add functions
++ test topo extractions
++ **TODO**
+  + [ ] build a structure to controll all srv6 paths
+
+basic functions finished

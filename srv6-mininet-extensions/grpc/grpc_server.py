@@ -22,6 +22,7 @@ grpc_server = None
 # Netlink socket
 ip_route = None
 # Cache of the resolved interfaces
+myName = ""
 interfaces = ['-eth0','-eth1','-eth2']
 idxs = {}
 # logger reference
@@ -50,7 +51,7 @@ class SRv6ExplicitPathHandler(srv6_explicit_path_pb2_grpc.SRv6ExplicitPathServic
       segments = []
       for srv6_segment in path.sr_path:
         segments.append(srv6_segment.segment)
-      ip_route.route(op, dst=path.destination, oif=idxs['ads1-' + path.device],
+      ip_route.route(op, dst=path.destination, oif=idxs[myName + '-' + path.device],
         encap={'type':'seg6', 'mode':path.encapmode, 'segs':segments})
     # and create the response
     return srv6_explicit_path_pb2.SRv6EPReply(message="OK")
@@ -129,10 +130,10 @@ def parse_options():
   logger.info("SERVER_DEBUG:" + str(SERVER_DEBUG))
 
 if __name__ == "__main__":
-  if len(sys.argv) > 2:
-    GRPC_PORT += int(sys.argv[1])
+  if len(sys.argv) > 1:
+    myName = sys.argv[1]
     for i in range(0,len(interfaces)):
-      interfaces[i] = sys.argv[2] + interfaces[i]
+      interfaces[i] = sys.argv[1] + interfaces[i]
   
   parse_options()
   start_server()
