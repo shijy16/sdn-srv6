@@ -1,0 +1,285 @@
+{
+    "edges": [
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "1", 
+            "target": "2", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "2", 
+            "target": "5", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "2", 
+            "target": "6", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "2", 
+            "target": "12", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "3", 
+            "target": "6", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "3", 
+            "target": "9", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "4", 
+            "target": "7", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "4", 
+            "target": "10", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "4", 
+            "target": "11", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "5", 
+            "target": "7", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "5", 
+            "target": "8", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "6", 
+            "target": "7", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "8", 
+            "target": "10", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "10", 
+            "target": "11", 
+            "view": "data"
+        }, 
+        {
+            "info": {
+                "property": {
+                    "delay": 1000, 
+                    "bw": 99200
+                }, 
+                "group": ""
+            }, 
+            "source": "9", 
+            "target": "12", 
+            "view": "data"
+        }
+    ], 
+    "vertices": [
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "1"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "2"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "3"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "4"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "5"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "6"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "7"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "8"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "9"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "10"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "11"
+        }, 
+        {
+            "info": {
+                "group": [], 
+                "property": {}, 
+                "type": "Router"
+            }, 
+            "id": "12"
+        }
+    ], 
+    "graph_parameters": {
+        "testbed": "MININET"
+    }
+}
