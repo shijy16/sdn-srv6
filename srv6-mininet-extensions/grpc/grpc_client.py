@@ -15,9 +15,16 @@ CERTIFICATE = 'cert_client.pem'
 class srv6_path_manager:
   stubs = {}
   srv6_path = {}
-  def __init__(self):
-    self.stubs['2000::1'],channel = self.get_grpc_session("[2000::1]", 8000, SECURE)
-    self.stubs['2000::2'],channel = self.get_grpc_session("[2000::2]", 8000, SECURE)
+  def __init__(self,num = -1,adresses=[]):
+    if(len(adresses) > 0):
+      for address in adresses:
+        self.stubs[address],channel = self.get_grpc_session("[" + address + "]", 8000, SECURE)
+    elif num > -1:
+      for i in range(1,num + 1):
+        addr = '2000::' + str(eval('hex(' + str(i) + ')'))[2:]
+        self.stubs[addr],channel = self.get_grpc_session("[" + addr + "]", 8000, SECURE)
+    else:
+      print('ERROR: NO SERVER')
   
   def get_key(self,src,dst):
     return src+"->"+dst
@@ -60,7 +67,7 @@ class srv6_path_manager:
       print(str(e))
       return False
 
-  def remove_srv6_path(self,src,dst,segs=[],encapmode='inline'):
+  def remove_srv6_path(self,src,dst,segs=[],encapmode='encap'):
     print("-------------------remove begin---------------")
     if(self.srv6_path.has_key(self.get_key(src,dst))):
       return self.send_remove_srv6_path(self.srv6_path.pop(self.get_key(src,dst)))
@@ -119,11 +126,11 @@ class srv6_path_manager:
     self.srv6_path.clear()
 
 
-manager = srv6_path_manager()
-manager.add_path('2000::1','fdf0:0:0:2::2/128',['fdf0:0:0:2::1'],'inline')
-manager.add_path('2000::1','fdf0:0:0:3::2/128',['fdff::2'],'inline')
-manager.add_path('2000::1','fdff::4/128',['fdff::2'],'inline')
-manager.add_path('2000::1','fdff::5/128',['fdff::2'],'inline')
-manager.add_path('2000::1','fdff::6/128',['fdff::2'],'inline')
-manager.add_path('2000::1','fdff::7/128',['fdff::2'],'inline')
+manager = srv6_path_manager(adresses=['2000::6','2000::1','2000::9'])
+# manager.add_path('2000::1','fdf0:0:0:2::2/128',['fdf0:0:0:2::1'],'inline')
+# manager.add_path('2000::1','fdf0:0:0:3::2/128',['fdff::2'],'inline')
+manager.add_path('2000::6','fdff::1/128',['fdff::9'],'encap')
+# manager.add_path('2000::1','fdff::5/128',['fdff::2'],'inline')
+# manager.add_path('2000::1','fdff::6/128',['fdff::2'],'inline')
+# manager.add_path('2000::1','fdff::7/128',['fdff::2'],'inline')
 # manager.clear_all()

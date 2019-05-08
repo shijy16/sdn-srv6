@@ -116,8 +116,14 @@ class SRv6Topo(Topo):
             loopbackip = "%s/%s" % (loopbackIP, LoopbackAllocator.prefix)
             mgmtip = "%s/%s" % (mgmtIP, MgmtAllocator.prefix)
             # Add the router to the topology
-            self.addHost(name=router, cls=SRv6Router, sshd=True, mgmtip=mgmtip,
-                loopbackip=loopbackip, routerid=routerid, nets=[])
+            if(router_properties['sr_node']):
+                print(router,'srv6 node',router_properties['sr_node'])
+                self.addHost(name=router, cls=SRv6Router, sshd=True, mgmtip=mgmtip,
+                    loopbackip=loopbackip, routerid=routerid, nets=[])
+            else:
+                print(router,'not srv6 node',router_properties['sr_node'])
+                self.addHost(name=router, cls=Router,sshd=True, mgmtip=mgmtip,
+                    loopbackip=loopbackip, routerid=routerid, nets=[])
             # Save mapping node to mgmt
             nodes_to_mgmt[router] = str(mgmtIP)
             # Add node to the topology graph
@@ -151,6 +157,7 @@ class SRv6Topo(Topo):
                 delay=core_link_properties['delay'])
             # Get Port number
             portNumber = self.port(lhs, rhs)
+            print(portNumber[0])
             # Create lhs_intf
             lhsintf = "%s-eth%d" % (lhs, portNumber[0])
             # Create rhs_intf
@@ -217,8 +224,8 @@ def stopAll():
     os.system('service sshd restart')
 
 def runServers(net):
+    return 1
     for host in net.topo.routers:
-        print("what the hell")
         commandLine = "python grpc/grpc_server.py "+ host + " &"
         net.get(host).cmd(commandLine)
         print(commandLine)

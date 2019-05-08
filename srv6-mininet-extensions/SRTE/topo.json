@@ -4,7 +4,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -16,7 +18,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 2.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 2.0
                 }, 
                 "group": ""
             }, 
@@ -28,7 +32,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 2.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 3.0
                 }, 
                 "group": ""
             }, 
@@ -40,7 +46,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 3.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -52,7 +60,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 4.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -64,7 +74,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 4.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -76,7 +88,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -88,7 +102,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 3.0
                 }, 
                 "group": ""
             }, 
@@ -100,7 +116,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -112,7 +130,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -124,7 +144,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 3.0
                 }, 
                 "group": ""
             }, 
@@ -136,7 +158,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 3.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -148,7 +172,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 2.0
                 }, 
                 "group": ""
             }, 
@@ -160,7 +186,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 1.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 1.0
                 }, 
                 "group": ""
             }, 
@@ -172,7 +200,9 @@
             "info": {
                 "property": {
                     "delay": 1000, 
-                    "bw": 99200
+                    "weight_r2l": 3.0, 
+                    "bw": 99.2, 
+                    "weight_l2r": 2.0
                 }, 
                 "group": ""
             }, 
@@ -185,7 +215,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "1"
@@ -193,7 +225,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "2"
@@ -201,7 +235,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "3"
@@ -209,7 +245,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "4"
@@ -217,7 +255,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "5"
@@ -225,7 +265,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": true
+                }, 
                 "type": "Router"
             }, 
             "id": "6"
@@ -233,7 +275,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "7"
@@ -241,7 +285,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "8"
@@ -249,7 +295,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": true
+                }, 
                 "type": "Router"
             }, 
             "id": "9"
@@ -257,7 +305,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "10"
@@ -265,7 +315,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": false
+                }, 
                 "type": "Router"
             }, 
             "id": "11"
@@ -273,7 +325,9 @@
         {
             "info": {
                 "group": [], 
-                "property": {}, 
+                "property": {
+                    "sr_node": true
+                }, 
                 "type": "Router"
             }, 
             "id": "12"

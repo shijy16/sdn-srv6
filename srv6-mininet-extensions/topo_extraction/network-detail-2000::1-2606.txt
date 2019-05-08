@@ -1,0 +1,162 @@
+
+shijy-N551JW> 
+shijy-N551JW> terminal length 0
+shijy-N551JW> 
+shijy-N551JW> show ipv6 ospf6 database network detail
+
+        Area Scoped Link State Database (Area 0.0.0.0)
+
+Age:  479 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.2
+LS Sequence Number: 0x80000001
+CheckSum: 0x32ef Length: 32
+Duration: 00:07:58
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.2
+     Attached Router: 0.0.0.1
+
+Age:  480 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.5
+LS Sequence Number: 0x80000001
+CheckSum: 0x4cce Length: 32
+Duration: 00:07:58
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.5
+     Attached Router: 0.0.0.2
+
+Age:  480 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.6
+LS Sequence Number: 0x80000001
+CheckSum: 0x50c8 Length: 32
+Duration: 00:07:58
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.6
+     Attached Router: 0.0.0.2
+
+Age:  480 Type: Network
+Link State ID: 0.0.0.3
+Advertising Router: 0.0.0.6
+LS Sequence Number: 0x80000001
+CheckSum: 0x54c2 Length: 32
+Duration: 00:07:58
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.6
+     Attached Router: 0.0.0.3
+
+Age:  481 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.7
+LS Sequence Number: 0x80000001
+CheckSum: 0x70a4 Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.7
+     Attached Router: 0.0.0.4
+
+Age:  481 Type: Network
+Link State ID: 0.0.0.3
+Advertising Router: 0.0.0.7
+LS Sequence Number: 0x80000001
+CheckSum: 0x749e Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.7
+     Attached Router: 0.0.0.5
+
+Age:  476 Type: Network
+Link State ID: 0.0.0.4
+Advertising Router: 0.0.0.7
+LS Sequence Number: 0x80000001
+CheckSum: 0x7898 Length: 32
+Duration: 00:07:52
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.7
+     Attached Router: 0.0.0.6
+
+Age:  481 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.8
+LS Sequence Number: 0x80000001
+CheckSum: 0x828f Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.8
+     Attached Router: 0.0.0.5
+
+Age:  482 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.9
+LS Sequence Number: 0x80000001
+CheckSum: 0x6aa7 Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.9
+     Attached Router: 0.0.0.3
+
+Age:  482 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.10
+LS Sequence Number: 0x80000001
+CheckSum: 0x7c92 Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.10
+     Attached Router: 0.0.0.4
+
+Age:  477 Type: Network
+Link State ID: 0.0.0.3
+Advertising Router: 0.0.0.10
+LS Sequence Number: 0x80000001
+CheckSum: 0xaa5f Length: 32
+Duration: 00:07:52
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.10
+     Attached Router: 0.0.0.8
+
+Age:  478 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.11
+LS Sequence Number: 0x80000001
+CheckSum: 0x808c Length: 32
+Duration: 00:07:52
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.11
+     Attached Router: 0.0.0.4
+
+Age:  483 Type: Network
+Link State ID: 0.0.0.3
+Advertising Router: 0.0.0.11
+LS Sequence Number: 0x80000001
+CheckSum: 0xca3b Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.11
+     Attached Router: 0.0.0.10
+
+Age:  480 Type: Network
+Link State ID: 0.0.0.2
+Advertising Router: 0.0.0.12
+LS Sequence Number: 0x80000001
+CheckSum: 0x68a4 Length: 32
+Duration: 00:07:57
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.12
+     Attached Router: 0.0.0.2
+
+Age:  475 Type: Network
+Link State ID: 0.0.0.3
+Advertising Router: 0.0.0.12
+LS Sequence Number: 0x80000001
+CheckSum: 0xc044 Length: 32
+Duration: 00:07:53
+     Options: --|R|-|--|E|V6
+     Attached Router: 0.0.0.12
+     Attached Router: 0.0.0.9
+
+
+shijy-N551JW> 
+shijy-N551JW> q
+

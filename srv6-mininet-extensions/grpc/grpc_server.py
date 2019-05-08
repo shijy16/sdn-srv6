@@ -23,7 +23,7 @@ grpc_server = None
 ip_route = None
 # Cache of the resolved interfaces
 myName = ""
-interfaces = ['-eth0','-eth1','-eth2']
+interfaces = ['-eth0','-eth1','-eth2','-eth3','-eth4','-eth5']
 idxs = {}
 # logger reference
 logger = logging.getLogger(__name__)
@@ -98,8 +98,9 @@ def start_server():
     ip_route = IPRoute()
   # Resolve the interfaces
   for interface in interfaces:
-    idxs[interface] = ip_route.link_lookup(ifname=interface)[0]
-    print(idxs[interface])
+    if(ip_route.link_lookup(ifname=interface)):
+      idxs[interface] = ip_route.link_lookup(ifname=interface)[0]
+    # print(idxs[interface])
 
   # Start the loop for gRPC
   logger.info("Listening gRPC")

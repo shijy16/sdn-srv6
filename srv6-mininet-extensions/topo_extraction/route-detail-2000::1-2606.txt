@@ -1,0 +1,467 @@
+
+shijy-N551JW> 
+shijy-N551JW> terminal length 0
+shijy-N551JW> 
+shijy-N551JW> show ipv6 ospf6 route intra-area detail
+Destination: fdf0::/64
+Destination type: Network
+Installed Time: 00:07:58 ago
+  Changed Time: 00:07:58 ago
+Lock: 2 Flags: BA--
+Memory: prev: (nil) this: 0x562d53361ca0 next: 0x562d5336cb50
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.2
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 1 (0)
+Nexthop:
+  :: 1-eth1
+
+Destination: fdf0:0:0:1::/64
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53361ca0 this: 0x562d5336cb50 next: 0x562d5336cc50
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.5
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 2 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:2::/64
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336cb50 this: 0x562d5336cc50 next: 0x562d5336cd50
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.6
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 2 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:3::/64
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336cc50 this: 0x562d5336cd50 next: 0x562d5336e4a0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.12
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 2 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:4::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336cd50 this: 0x562d5336e4a0 next: 0x562d5336f060
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.3 Adv: 0.0.0.6
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 3 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:5::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336e4a0 this: 0x562d5336f060 next: 0x562d53370f40
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.9
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 4 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:6::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336f060 this: 0x562d53370f40 next: 0x562d533729d0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.7
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 4 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:7::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53370f40 this: 0x562d533729d0 next: 0x562d53374300
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.10
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 5 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:8::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d533729d0 this: 0x562d53374300 next: 0x562d5336d7e0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.11
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 5 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:9::/64
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53374300 this: 0x562d5336d7e0 next: 0x562d5336d8e0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.3 Adv: 0.0.0.7
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 3 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:a::/64
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336d7e0 this: 0x562d5336d8e0 next: 0x562d53371100
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.2 Adv: 0.0.0.8
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 3 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:b::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336d8e0 this: 0x562d53371100 next: 0x562d53376bb0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.4 Adv: 0.0.0.7
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 3 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:c::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53371100 this: 0x562d53376bb0 next: 0x562d53376cb0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.3 Adv: 0.0.0.10
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 4 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:d::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53376bb0 this: 0x562d53376cb0 next: 0x562d53361b40
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.3 Adv: 0.0.0.11
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 5 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdf0:0:0:e::/64
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:47 ago
+Lock: 2 Flags: B--C
+Memory: prev: 0x562d53376cb0 this: 0x562d53361b40 next: 0x562d5335f810
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.3 Adv: 0.0.0.12
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 3 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::1/128
+Destination type: Network
+Installed Time: 00:07:58 ago
+  Changed Time: 00:07:58 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53361b40 this: 0x562d5335f810 next: 0x562d5336ce50
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.1
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 10 (0)
+Nexthop:
+  :: lo
+
+Destination: fdff::2/128
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5335f810 this: 0x562d5336ce50 next: 0x562d5336f160
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.2
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 11 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::3/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336ce50 this: 0x562d5336f160 next: 0x562d53372f10
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.3
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 13 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::4/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336f160 this: 0x562d53372f10 next: 0x562d5336d9e0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.4
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 14 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::5/128
+Destination type: Network
+Installed Time: 00:07:53 ago
+  Changed Time: 00:07:53 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53372f10 this: 0x562d5336d9e0 next: 0x562d5336e5a0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.5
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 12 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::6/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336d9e0 this: 0x562d5336e5a0 next: 0x562d533712c0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.6
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 12 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::7/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d5336e5a0 this: 0x562d533712c0 next: 0x562d53374e60
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.7
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 13 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::8/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d533712c0 this: 0x562d53374e60 next: 0x562d5336fc90
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.8
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 13 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::9/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:47 ago
+Lock: 2 Flags: B--C
+Memory: prev: 0x562d53374e60 this: 0x562d5336fc90 next: 0x562d53376db0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.9
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 13 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::a/128
+Destination type: Network
+Installed Time: 00:07:52 ago
+  Changed Time: 00:07:52 ago
+Lock: 2 Flags: B--C
+Memory: prev: 0x562d5336fc90 this: 0x562d53376db0 next: 0x562d533705a0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.10
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 14 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::b/128
+Destination type: Network
+Installed Time: 00:07:47 ago
+  Changed Time: 00:07:47 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d53376db0 this: 0x562d533705a0 next: 0x562d5336e6a0
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.11
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 15 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+Destination: fdff::c/128
+Destination type: Network
+Installed Time: 00:07:47 ago
+  Changed Time: 00:07:47 ago
+Lock: 2 Flags: BA--
+Memory: prev: 0x562d533705a0 this: 0x562d5336e6a0 next: (nil)
+Associated Area: 0.0.0.0
+Path Type: Intra-Area
+LS Origin: Intra-Prefix Id: 0.0.0.0 Adv: 0.0.0.12
+Options: --|-|-|--|-|--
+Router Bits: --------
+Prefix Options: xxx
+Metric Type: 1
+Metric: 12 (0)
+Nexthop:
+  fe80::4825:adff:fec0:4b84 1-eth1
+
+shijy-N551JW> 
+shijy-N551JW> q
+
