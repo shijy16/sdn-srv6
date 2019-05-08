@@ -23,6 +23,8 @@ This project depends on [SRv6 Properties Generators](https://github.com/netgroup
 > sudo python setup.py install
 ```
 
+Install quagga
+
 ### 1. Get `srv6-mininet-extensions ` ready
 
 see srv6-mininet-extensions/README.md
