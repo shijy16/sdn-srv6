@@ -92,6 +92,27 @@ python topo_extract/ti_extraction.py --ip_ports 2000::1-2606 --peroid 1
 
 then you can get topo infos in folder `topo_extraction`
 
+### 5. traffic generation
+
+use `iperf` to generate ipv6 udp traffic.
+
+in each terminal,start udp server:
+
+````shell
+iperf -u -s -V
+````
+
+to generate traffic, on dest host,run:
+
+````shell
+iperf -u -t [last time] -i [info interval] -V -c [destination ip] -b [bandwidth] -f [format]
+e.g:
+iperf -u -t 10 -i 1 -V -c fdff::2 -b 20m -f m
+-b 20m means 20Mbits/s,-f m means format is Mbits
+````
+
+
+
 ## III. development date
 
 #### 11st April
@@ -102,7 +123,7 @@ then you can get topo infos in folder `topo_extraction`
   + [x]  add auto startup funcs for each devices
     + [x] still some bugs
   + [x] add delete function(need to learn `grpc` programming I guess)
-  + [ ] to see if it's possible to build grpc links between mgmt and all routers through  real time topology
+  + [x] to see if it's possible to build grpc links between mgmt and all routers through  real time topology
 
 #### 18th April
 

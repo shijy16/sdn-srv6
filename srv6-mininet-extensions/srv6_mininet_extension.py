@@ -64,6 +64,14 @@ nodes_to_mgmt = {}
 # Network topology
 topology = nx.MultiDiGraph()
 
+class MyCLI(CLI):
+    def do_iperf_test(self,line):
+        for r in self.mn.hosts:
+            if(not r.name == 'mgmt'):
+                print(r.name)
+                command_text = '> output/' + r.name + '.txt'
+                self.mn.get(r.name).cmd('pwd > output/' + r.name + '.txt')
+
 # Create SRv6 topology and a management network for the hosts.
 class SRv6Topo(Topo):
 
@@ -116,14 +124,18 @@ class SRv6Topo(Topo):
             loopbackip = "%s/%s" % (loopbackIP, LoopbackAllocator.prefix)
             mgmtip = "%s/%s" % (mgmtIP, MgmtAllocator.prefix)
             # Add the router to the topology
-            if(router_properties['sr_node']):
-                print(router,'srv6 node',router_properties['sr_node'])
+            try:
+                if(router_properties['sr_node']):
+                    print('router',router,'srv6 node')
+                    self.addHost(name=router, cls=SRv6Router, sshd=True, mgmtip=mgmtip,
+                        loopbackip=loopbackip, routerid=routerid, nets=[])
+                else:
+                    print('router',router,'not srv6 node')
+                    self.addHost(name=router, cls=Router,sshd=True, mgmtip=mgmtip,
+                        loopbackip=loopbackip, routerid=routerid, nets=[])
+            except:
                 self.addHost(name=router, cls=SRv6Router, sshd=True, mgmtip=mgmtip,
-                    loopbackip=loopbackip, routerid=routerid, nets=[])
-            else:
-                print(router,'not srv6 node',router_properties['sr_node'])
-                self.addHost(name=router, cls=Router,sshd=True, mgmtip=mgmtip,
-                    loopbackip=loopbackip, routerid=routerid, nets=[])
+                        loopbackip=loopbackip, routerid=routerid, nets=[])
             # Save mapping node to mgmt
             nodes_to_mgmt[router] = str(mgmtIP)
             # Add node to the topology graph
@@ -157,7 +169,7 @@ class SRv6Topo(Topo):
                 delay=core_link_properties['delay'])
             # Get Port number
             portNumber = self.port(lhs, rhs)
-            print(portNumber[0])
+            # print(portNumber[0])
             # Create lhs_intf
             lhsintf = "%s-eth%d" % (lhs, portNumber[0])
             # Create rhs_intf
@@ -224,11 +236,14 @@ def stopAll():
     os.system('service sshd restart')
 
 def runServers(net):
-    return 1
     for host in net.topo.routers:
+        print(host,'starting grpc server and iperf server')
         commandLine = "python grpc/grpc_server.py "+ host + " &"
         net.get(host).cmd(commandLine)
-        print(commandLine)
+        print('\t',commandLine)
+        commandLine = "iperf -u -s V &"
+        net.get(host).cmd(commandLine)
+        print('\t',commandLine)
 
 # Utility function to deploy Mininet topology
 def deploy( options ):
@@ -260,7 +275,7 @@ def deploy( options ):
     # Show Mininet prompt
     if not no_cli:
         # Mininet CLI
-        CLI(net)
+        MyCLI(net)
         # Stop topology
         net.stop()
         # Clean all
