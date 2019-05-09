@@ -96,12 +96,13 @@ class MyCLI(CLI):
                     continue
                 if len(path_matrix[i][j]) == 0:
                     continue
-                if path_matrix[i][j][0]['path_id'] > 0 and len(path_matrix[i][j][0]['path']) > 2:
-                    path = {}
-                    path['st'] = i + 1
-                    path['ed'] = j + 1
-                    path['segs'] = path_matrix[i][j][0]['path']
-                    paths.append(path)
+                for p in path_matrix[i][j]:
+                    if p['path_id'] > 0 and len(p['path']) > 2:
+                        path = {}
+                        path['st'] = i + 1
+                        path['ed'] = j + 1
+                        path['segs'] = p['path']
+                        paths.append(path)
         config_dict['paths'] = paths
         try:
             json_str = json.dumps(config_dict, indent=4)

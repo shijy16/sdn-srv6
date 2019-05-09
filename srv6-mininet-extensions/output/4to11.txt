@@ -3,7 +3,7 @@ Client connecting to fdff::b, UDP port 5001
 Sending 1450 byte datagrams, IPG target: 691876.42 us (kalman adjust)
 UDP buffer size: 212992 Byte (default)
 ------------------------------------------------------------
-[  3] local fdf0:0:0:8::1 port 39353 connected with fdff::b port 5001
+[  3] local fdf0:0:0:8::1 port 54658 connected with fdff::b port 5001
 [ ID] Interval       Transfer     Bandwidth
 [  3]  0.0- 1.0 sec  4350 Bytes  34800 bits/sec
 [  3]  1.0- 2.0 sec  1450 Bytes  11600 bits/sec

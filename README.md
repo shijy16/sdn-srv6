@@ -94,6 +94,8 @@ then you can get topo infos in folder `topo_extraction`
 
 ### 5. traffic generation
 
+this depends on `SRTE/path.txt`
+
 use `iperf` to generate ipv6 udp traffic.
 
 in each terminal,start udp server:
@@ -111,7 +113,23 @@ iperf -u -t 10 -i 1 -V -c fdff::2 -b 20m -f m
 -b 20m means 20Mbits/s,-f m means format is Mbits
 ````
 
+to call auto test function, in` mininet CLI`,run:
 
+````
+iperf_test
+````
+
+### 6. SR configure
+
+this depends on `SRTE/path.txt`
+
+to call auto SR function,in `mininet CLI`,run :
+
+````
+SRConfig
+````
+
+this will run client on `mgmt` to configure all SR paths
 
 ## III. development date
 
