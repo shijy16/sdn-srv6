@@ -34,7 +34,7 @@ def read_topo():
     edges = []
     for i in range(1,edge_num + 1):
         t_list = get_num_in_str(content[i])
-        edges.append(edge(t_list[0],t_list[1],float(t_list[2])/float(1000)))
+        edges.append(edge(t_list[0],t_list[1],float(t_list[2])/float(1000000)))
     return node_num,edge_num,edges,sr_nodes,weights
 
 

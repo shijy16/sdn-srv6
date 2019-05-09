@@ -55,6 +55,8 @@ from srv6_utils import *
 from srv6_generators import *
 from srv6_net_utils import *
 
+from SRTE.traffic_transform import *
+
 # nodes.sh file for setup of the nodes
 NODES_SH = "/tmp/nodes.sh"
 # Topology file
@@ -63,15 +65,54 @@ TOPOLOGY_FILE = "/tmp/topology.json"
 nodes_to_mgmt = {}
 # Network topology
 topology = nx.MultiDiGraph()
+path_matrix = read_traffic('SRTE/path.txt')
+print(path_matrix)
+sr_routers = []
 
 class MyCLI(CLI):
     def do_iperf_test(self,line):
-        for r in self.mn.hosts:
-            if(not r.name == 'mgmt'):
-                print(r.name)
-                command_text = '> output/' + r.name + '.txt'
-                self.mn.get(r.name).cmd('pwd > output/' + r.name + '.txt')
+        for i in range(12):
+            print(i)
+            for j in range(12):
+                if i == j:
+                    continue
+                if len(path_matrix[i][j]) == 0:
+                    continue
+                cmd_text = 'iperf -u -t 10 -i 1 -V -c fdff::' +\
+                     str(eval('hex(' + str(j + 1) + ')'))[2:] + ' -b ' + str(path_matrix[i][j][0]['flow_on_path']) + ' -f b ' + \
+                    '> output/' + str(i + 1) + 'to'+ str(j + 1)  +'.txt &'
+                print('\t' + cmd_text)
+                self.mn.get(str(i + 1)).cmd(cmd_text)
+            
 
+
+    def do_SRConfig(self,line):
+        config_dict = {}
+        config_dict['sr_nodes'] = sr_routers
+        paths = []
+        for i in range(0,12):
+            for j in range(0,12):
+                if i == j:
+                    continue
+                if len(path_matrix[i][j]) == 0:
+                    continue
+                if path_matrix[i][j][0]['path_id'] > 0 and len(path_matrix[i][j][0]['path']) > 2:
+                    path = {}
+                    path['st'] = i + 1
+                    path['ed'] = j + 1
+                    path['segs'] = path_matrix[i][j][0]['path']
+                    paths.append(path)
+        config_dict['paths'] = paths
+        try:
+            json_str = json.dumps(config_dict, indent=4)
+            with open('grpc/config.json', 'w') as json_file:
+                json_file.write(json_str)
+            print('config written')
+        except:
+            print('error occurs while writing config')
+        self.mn.get('mgmt').cmd('python grpc/grpc_client.py')
+        print('all sr routes have been added by grpc client on mgmt')       
+                    
 # Create SRv6 topology and a management network for the hosts.
 class SRv6Topo(Topo):
 
@@ -129,6 +170,7 @@ class SRv6Topo(Topo):
                     print('router',router,'srv6 node')
                     self.addHost(name=router, cls=SRv6Router, sshd=True, mgmtip=mgmtip,
                         loopbackip=loopbackip, routerid=routerid, nets=[])
+                    sr_routers.append(router)
                 else:
                     print('router',router,'not srv6 node')
                     self.addHost(name=router, cls=Router,sshd=True, mgmtip=mgmtip,
@@ -237,13 +279,13 @@ def stopAll():
 
 def runServers(net):
     for host in net.topo.routers:
-        print(host,'starting grpc server and iperf server')
+        print('router ' + host + ': starting grpc server and iperf server')
         commandLine = "python grpc/grpc_server.py "+ host + " &"
         net.get(host).cmd(commandLine)
-        print('\t',commandLine)
-        commandLine = "iperf -u -s V &"
+        print('\t' + commandLine)
+        commandLine = "iperf -u -s -V &"
         net.get(host).cmd(commandLine)
-        print('\t',commandLine)
+        print('\t' + commandLine)
 
 # Utility function to deploy Mininet topology
 def deploy( options ):

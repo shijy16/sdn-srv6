@@ -6,7 +6,7 @@ import os
 
 import srv6_explicit_path_pb2_grpc
 import srv6_explicit_path_pb2
-
+import numpy
 # Define wheter to use SSL or not
 SECURE = False
 # SSL cerificate for server validation
@@ -15,8 +15,12 @@ CERTIFICATE = 'cert_client.pem'
 class srv6_path_manager:
   stubs = {}
   srv6_path = {}
-  def __init__(self,num = -1,adresses=[]):
-    if(len(adresses) > 0):
+  def __init__(self,num = -1,adresses=[],id_set = []):
+    if len(id_set) > 0:
+      for i in id_set:
+        addr = '2000::' + str(eval('hex(' + str(i) + ')'))[2:]
+        self.stubs[addr],channel = self.get_grpc_session("[" + addr + "]", 8000, SECURE)
+    elif(len(adresses) > 0):
       for address in adresses:
         self.stubs[address],channel = self.get_grpc_session("[" + address + "]", 8000, SECURE)
     elif num > -1:
@@ -125,12 +129,24 @@ class srv6_path_manager:
       self.remove_srv6_path(request.src,request.dst)
     self.srv6_path.clear()
 
+def to_hexstr(int_):
+  return  str(eval('hex(' + str(int_) + ')'))[2:]
 
-manager = srv6_path_manager(adresses=['2000::6','2000::1','2000::9'])
-# manager.add_path('2000::1','fdf0:0:0:2::2/128',['fdf0:0:0:2::1'],'inline')
-# manager.add_path('2000::1','fdf0:0:0:3::2/128',['fdff::2'],'inline')
-manager.add_path('2000::6','fdff::1/128',['fdff::9'],'encap')
-# manager.add_path('2000::1','fdff::5/128',['fdff::2'],'inline')
-# manager.add_path('2000::1','fdff::6/128',['fdff::2'],'inline')
-# manager.add_path('2000::1','fdff::7/128',['fdff::2'],'inline')
-# manager.clear_all()
+def work():
+  load_dict = {}
+  with open("grpc/config.json",'r') as load_f:
+    load_dict = json.load(load_f)
+
+  manager = srv6_path_manager(id_set=load_dict['sr_nodes'])
+  for path in load_dict['paths']:
+    st = '2000::' + to_hexstr(path['st'])
+    ed = 'fdff::' + to_hexstr(path['ed'])
+    segs = []
+    for seg in path['segs'][1:-1]:
+      seg = 'fdff::' + to_hexstr(seg)
+      segs.append(seg)
+    manager.add_path(st,ed,segs,'encap')
+  return manager
+
+if __name__ == '__main__':
+  work()

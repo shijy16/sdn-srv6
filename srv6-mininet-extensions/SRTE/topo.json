@@ -5,7 +5,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -19,7 +19,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 2.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 2.0
                 }, 
                 "group": ""
@@ -33,7 +33,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 2.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 3.0
                 }, 
                 "group": ""
@@ -47,7 +47,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 3.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -61,7 +61,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 4.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -75,7 +75,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 4.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -89,7 +89,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -103,7 +103,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 3.0
                 }, 
                 "group": ""
@@ -117,7 +117,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -131,7 +131,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -145,7 +145,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 3.0
                 }, 
                 "group": ""
@@ -159,7 +159,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 3.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -173,7 +173,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 2.0
                 }, 
                 "group": ""
@@ -187,7 +187,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 1.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 1.0
                 }, 
                 "group": ""
@@ -201,7 +201,7 @@
                 "property": {
                     "delay": 1000, 
                     "weight_r2l": 3.0, 
-                    "bw": 99.2, 
+                    "bw": 0.0992, 
                     "weight_l2r": 2.0
                 }, 
                 "group": ""
